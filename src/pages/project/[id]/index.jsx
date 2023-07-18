@@ -27,8 +27,6 @@ const Project = () => {
         }
     })();
 
-    console.log({ project });
-
     return (
         <>
             <header>

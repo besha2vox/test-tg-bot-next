@@ -21,23 +21,23 @@
 
 // getTelegramUsername();
 
-const isValidTelegramLink = (url) => {
-    console.time();
-    if (!url.startsWith('https://t.me/')) {
-        return false;
-    }
+// const isValidTelegramLink = (url) => {
+//     console.time();
+//     if (!url.startsWith('https://t.me/')) {
+//         return false;
+//     }
 
-    const username = url.split('https://t.me/')[1];
+//     const username = url.split('https://t.me/')[1];
 
-    if (username.length < 5 || username.length > 32) {
-        return false;
-    }
+//     if (username.length < 5 || username.length > 32) {
+//         return false;
+//     }
 
-    return true;
-};
+//     return true;
+// };
 
-const url = 'https://t.me/besha2vox';
-const isValid = isValidTelegramLink(url);
+// const url = 'https://t.me/besha2vox';
+// const isValid = isValidTelegramLink(url);
 
-console.log(isValid);
-console.timeEnd();
+// console.log(isValid);
+// console.timeEnd();

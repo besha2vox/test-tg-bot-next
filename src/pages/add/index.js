@@ -6,7 +6,6 @@ const Add = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const { name, developers, qa } = e.target.elements;
-        console.log(name.value);
 
         const { data } = await axios.post(
             'https://64a87eb0dca581464b85cca1.mockapi.io/projects',
@@ -17,8 +16,6 @@ const Add = () => {
             }
         );
 
-        console.log({ data });
-
         const { id } = data;
 
         const message =
@@ -26,7 +23,7 @@ const Add = () => {
             `\nНеобхідна кількість учасників:` +
             `\n Developers: ${developers.value};` +
             `\n QA: ${qa.value}.` +
-            `\n http://localhost:3000/add/${id}`;
+            `\n http://localhost:3000/project/${id}`;
 
         try {
             const response = await fetch('api/add', {

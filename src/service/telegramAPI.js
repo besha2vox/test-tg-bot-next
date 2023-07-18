@@ -12,7 +12,6 @@ export const start = async () => {
     await bot.start();
 };
 
-// export const startBot = () => {
 bot.onText(/\/start/, async (msg) => {
     const chatId = msg.chat.id;
     const name = msg.chat.first_name;
@@ -76,7 +75,6 @@ bot.onText(/\/start/, async (msg) => {
         console.error('Помилка при взаємодії з DB', error);
     }
 });
-// };
 
 export const handlerAdd = async (req, res) => {
     if (req.method === 'POST') {
@@ -88,7 +86,6 @@ export const handlerAdd = async (req, res) => {
 
         telegramIds.forEach((telegramId) => {
             if (typeof telegramId !== 'number') return;
-            console.log({ telegramId });
             bot.sendMessage(telegramId, message);
         });
         res.status(200).json({ message: 'Повідомлення надіслано' });
